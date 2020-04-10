@@ -18,4 +18,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 <p>RStudio is also available online with RStudio Cloud. RStudio Cloud functions exactly like regular RStudio but can be accessed by any web browser after creating an account.</p>
 <p>After opening RStudio, a new project can be created by selecting <strong>File</strong>, and then <strong>New Project</strong>. Then select <strong>New Directory</strong>, and then <strong>New Project</strong>. Next, name the project and select <strong>Create Project</strong>. When a new RStudio project is created, it will create a new folder for the project where all the newly created files are stored. Data files can be added to a project by placing them in the project folder.</p>
 <p>Here is the view of a newly created RStudio project.</p>
+
+image: /images/1.png
+
 <img src="/images/1.png">
