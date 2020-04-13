@@ -1,4 +1,4 @@
-<p style="text-align: center;font-size:24px;"><strong>How to Use R for Data Analysis </strong></p>
+<p style="text-align: center;font-size:36px;"><strong>How to Use R for Data Analysis </strong></p>
 <br>
 <p><strong>Why R Should Be Used Data Analysis </strong></p>
 <p>Data analysis is the process of cleaning, modeling, and visualizing data to find useful information. The R programming language is designed for data analysis and has many benefits when used:</p>
