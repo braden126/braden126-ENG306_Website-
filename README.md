@@ -1,9 +1,6 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/braden126/braden126-ENG306_Website-/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-<p><strong>Why R for Data Analysis </strong></p>
+<p style="text-align: center;font-size:24px;"><strong>How to Use R for Data Analysis </strong></p>
+<br>
+<p><strong>Why R Should Be Used Data Analysis </strong></p>
 <p>Data analysis is the process of cleaning, modeling, and visualizing data to find useful information. The R programming language is designed for data analysis and has many benefits when used:</p>
 <ul>
 <li>R is open source and free</li>
