@@ -1,4 +1,4 @@
-<p><strong>An Introduction to Using R for Data Analysis</strong></p>
+<p><strong>Why R Should Be Used for Data Analysis</strong></p>
 <p>Data analysis is the process of cleaning, modeling, and visualizing data to find useful information. R and Python are the two main programming languages used for data analysis. Both languages are effective for data analysis and worth learning. Python is more commonly used and is easier to learn because it is used for general programming along with data analysis. This guide focuses on R because it is specifically designed to perform data analysis which means R has more tools to perform statistical functions. RStudio is also easier to use when managing code and datasets than other Python programming environments like PyCharm.</p>
 <p>The R programming language is designed for data analysis and has many benefits when used:</p>
 <ul>
@@ -24,7 +24,6 @@
 <p><strong>Loading Data into RStudio</strong></p>
 <p>To load data into RStudio, the data must first be stored in a data file. Some common file types used for storing data are excel files, comma separated value files, and Rdata files. To load one of these files into the global environment, first place a data file into the project folder. It will then appear in the <strong>Files Panel</strong>. Click on the desired data file in the files panel and select <strong>Import Dataset</strong>. This will open the interface for loading data which shows a preview of the data and the code used to load it into RStudio. Make sure the <strong>First Row as Names</strong> box is checked if the first row of the data contains the column names. If the dataset does not contain column names, uncheck the box and RStudio will assign default names to each column that can be changed later. After clicking <strong>Import</strong> the data file will be loaded into the <strong>Global Environment Panel </strong>and be ready for analysis.</p>
 <img src="./images/2.png">
-<p>&nbsp;</p>
 <p><strong>Packages </strong></p>
 <p>Packages in R are user-made functions that can be downloaded into RStudio and add more features to the base R language [1]. The most essential R package is Tidyverse, which is a compilation of the most useful R packages. The added packages include the Dplyr and Ggplot2 packages, which will be the focus of this guide. The Dplyr package contains a variety of helpful functions for data manipulation and the Ggplot2 contains functions for creating visualizations of datasets. By installing Tidyverse, both of those packages are installed, along with a few extra packages. The following code uses the <strong>install.packages()</strong> function to install the package to an RStudio project.</p>
 <img src="./images/3.png">
@@ -79,7 +78,6 @@
 <p>By adding an &ldquo;!&rdquo; before <strong>complete.cases()</strong> the filter will do the opposite, it will create a dataset with only the rows that have NA values. This can be useful because it separates all the clean data from the data with NA values and makes it easier to evaluate the NA values of the incomplete cases without removing all the data. In many situations incomplete cases can still be valuable if only a few columns contain NA values. In this case, <strong>!complete.cases()</strong> returns the 1 observation of the 32 total observations that contains an NA value.</p>
 <img src="./images/18.png">
 <p>Both the <strong>na.omit()</strong> and the <strong>complete.cases()</strong> functions are very effective in finding and removing NA values. However, <strong>complete.cases()</strong> is easier to implement into Dplyr functions and <strong>na.omit()</strong> is easier to use outside of Dplyr functions.</p>
-<p>&nbsp;</p>
 <p><strong>The Dplyr Package</strong></p>
 <p>This package creates a structure of code for data cleaning and manipulation that is easy to read and write [4]. It does this by using chains of Dplyr functions or &ldquo;verbs&rdquo; where data is piped into each function after being executed by the function before it. The main functions are as follows:</p>
 <ul>
@@ -97,7 +95,6 @@
 <img src="./images/20.png">
 <p>If you only want to remove a few columns from the dataset, select can also be used to deselect from a dataset. Using the &ldquo;-&ldquo; before a column will have the same output as typing all the columns you want to keep individually but in less and more readable code. The code below selects all the columns except weight using the &ldquo;-&ldquo; symbol.</p>
 <img src="./images/21.png">
-<p><strong>&nbsp;</strong></p>
 <p><strong>Dplyr Filter()</strong></p>
 <p>The <strong>filter()</strong> function is used to return only rows that satisfy specific conditions [6]. It uses logical operators to create conditions that can be used to evaluate values contained in the dataset. Here is an example of a <strong>filter()</strong> function that will assign the returned rows into a new dataset that will only contain rows that have a mpg value of less than 20.</p>
 <img src="./images/22.png">
@@ -139,11 +136,9 @@
 <img src="./images/33.png">
 <img src="./images/34.png">
 <img src="./images/35.png">
-<p>&nbsp;</p>
 <p>The <strong>aes()</strong> function can also have a value set for <strong>Size</strong>. The variable set to <strong>Size</strong> will make the points bigger based on how large the value of the variable is. In the below code, the variable for <strong>Size </strong>is horsepower, and points with a higher horsepower value will be larger than points with a small horsepower variable.</p>
 <img src="./images/36.png">
 <img src="./images/37.png">
-<p>&nbsp;</p>
 <p>When many points are in similar locations, they can overlap which can make it hard to read data. One way of fixing this is <strong>geom_jitter()</strong>. It works exactly like <strong>geom_point()</strong> but adds slight movement to the datapoints to make them stand out [14].</p>
 <img src="./images/38.png">
 <img src="./images/39.png">
