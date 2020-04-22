@@ -56,16 +56,17 @@
 <img src="./images/7.png">
 <p>We can then call the structure and summary function on the data. These functions are useful for exploring any dataset because they give you a quick overview of the data. The <strong>str()</strong> function displays how many variables and observations the dataset contains [1], Along with all the column names, the datatypes, and 10 values in each column. The <strong>summary()</strong> function displays the minimum value, the 1<sup>st</sup> quartile, the median, the mean, the 3<sup>rd</sup> quartile, and the maximum value [3]. Both of these functions are simple ways to examine any dataset and give an idea of what the data is like.</p>
 <img src="./images/8.png">
+<img src="./images/9.png">
 <p><strong>Dollar Notation</strong></p>
 <p>The dollar notation uses the &ldquo;$&rdquo; sign to quickly select columns of data frame. The &ldquo;$&rdquo; is used by typing the name of the dataset, a dollar sign, and then the desired column [1]. For example, the code below selects the horsepower column of our previous dataset.</p>
-<img src="./images/9.png">
-<p>Once a column is selected it can also be used for some basic calculations.</p>
 <img src="./images/10.png">
-<p>This notation can be used for more than taking quick looks at data and calculations. The dollar notation can add new variables to a dataset when combined with the assignment operator. The code below shows an example of creating a new variable using the variables of the dataset, in this case we can create a variable called, wt_hpRatio by dividing weight by horsepower.</p>
+<p>Once a column is selected it can also be used for some basic calculations.</p>
 <img src="./images/11.png">
+<p>This notation can be used for more than taking quick looks at data and calculations. The dollar notation can add new variables to a dataset when combined with the assignment operator. The code below shows an example of creating a new variable using the variables of the dataset, in this case we can create a variable called, wt_hpRatio by dividing weight by horsepower.</p>
+<img src="./images/12.png">
 <p>Another area where the dollar notation can be used is fixing datatypes. From the <strong>str()</strong> function call in the previous example we can see that all our variables are stored as numbers. However, the automatic transmission variable only has two possible values, &ldquo;0&rdquo; for automatic and &ldquo;1&rdquo; for manual, which means that it is actually a categorical variable. It is important to correct data types when cleaning data to be sure that R knows the intended datatype when doing calculations because it could cause calculation errors.</p>
 <p>The datatype for categorical values is &ldquo;factor&rdquo; in R. This issue can be resolved by using the <strong>as.factor()</strong> function and the dollar notation [3]. The code below uses the dollar notation to select the automatic transmission variable and replace it with the automatic transmission variable converted into a factor.</p>
-<img src="./images/12.png">
+<img src="./images/13.png">
 <p><strong>NA Values </strong></p>
 <p>When analyzing datasets there is often missing data. When data is missing it is displayed as an &ldquo;NA,&rdquo; which means, not available [1]. NA values could make rows of data unusable which causes data in visualizations or models to be less accurate. Luckily, R has several ways of dealing with NA values. To show these methods, the dollar notation is used to add a new column, &ldquo;natest,&rdquo; that contains an NA value. This code will add an NA value to the first row, and numbers 1 through 31 to the remaining rows.</p>
 <p>The first option is to use the <strong>complete.cases()</strong> function [3]. This function creates a logical vector that assigns a true value if the row is a complete case and a false value if the row contains an NA. We can call the <strong>complete.cases()</strong> function on our data and assign it to a new variable, dataNoNA. Calling a summary of the newly created variable displays the number of complete cases as trues and the incomplete cases as false. This method is useful in getting an idea of how many NA values a dataset may contain.</p>
