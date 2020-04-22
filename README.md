@@ -14,6 +14,7 @@
 <p><strong>How to Start a New R Project in RStudio</strong></p>
 <p>After opening RStudio, a new project can be created by selecting <strong>File</strong>, and then <strong>New Project</strong>. Then select <strong>New Directory</strong>, and then <strong>New Project</strong>. Next, name the project and select <strong>Create Project</strong>. When a new RStudio project is created, RStudio will create a new folder for the project where all the newly created files are stored. Data files can be added to a project by placing them in the project folder.</p>
 <p>Here is the view of a newly created RStudio project.</p>
+<img src="./images/1.png">
 <ul>
 <li><strong>The Script Panel </strong>is where R code is written and executed. A new script can be opened by clicking <strong>File</strong>, hovering over <strong>New File</strong>, and then clicking <strong>R Script</strong>. Clicking on <strong>Run</strong> at the right corner of the script panel will run the currently selected line of code.</li>
 <li><strong>The Console Panel </strong>displays the output of the code contained in R scripts when they are executed.</li>
@@ -22,6 +23,7 @@
 </ul>
 <p><strong>Loading Data into RStudio</strong></p>
 <p>To load data into RStudio, the data must first be stored in a data file. Some common file types used for storing data are excel files, comma separated value files, and Rdata files. To load one of these files into the global environment, first place a data file into the project folder. It will then appear in the <strong>Files Panel</strong>. Click on the desired data file in the files panel and select <strong>Import Dataset</strong>. This will open the interface for loading data which shows a preview of the data and the code used to load it into RStudio. Make sure the <strong>First Row as Names</strong> box is checked if the first row of the data contains the column names. If the dataset does not contain column names, uncheck the box and RStudio will assign default names to each column that can be changed later. After clicking <strong>Import</strong> the data file will be loaded into the <strong>Global Environment Panel </strong>and be ready for analysis.</p>
+<img src="./images/2.png">
 <p>&nbsp;</p>
 <p><strong>Packages </strong></p>
 <p>Packages in R are user-made functions that can be downloaded into RStudio and add more features to the base R language [1]. The most essential R package is Tidyverse, which is a compilation of the most useful R packages. The added packages include the Dplyr and Ggplot2 packages, which will be the focus of this guide. The Dplyr package contains a variety of helpful functions for data manipulation and the Ggplot2 contains functions for creating visualizations of datasets. By installing Tidyverse, both of those packages are installed, along with a few extra packages. The following code uses the <strong>install.packages()</strong> function to install the package to an RStudio project.</p>
@@ -44,16 +46,24 @@
 </ul>
 <p><strong>The Assignment Operator</strong></p>
 <p>Rather than an using an &ldquo;=&rdquo; operator to assign values to variables like other programming languages, R uses the &ldquo;-&gt;&rdquo; operator for assignment [3]. The &ldquo;-&gt;&rdquo; operator is very flexible because it can assign values in both directions.</p>
+<img src="./images/3.png">
 <p>Using the assignment operator, we can make a copy of the mtcars dataset. It is always good to make a copy of a dataset before running any data manipulation code because if the code does not do its intended function and the dataset is drastically changed, the original is available to undo any mistakes.</p>
+<img src="./images/4.png">
 <p><strong>Exploring Data</strong></p>
 <p>Now that we have a copy of the mtcars dataset named data, we can began looking at it. The <strong>head()</strong> function can be used to view the first 6 rows in the dataset to show what the data looks like [1].</p>
+<img src="./images/4.png">
 <p>We can then call the structure and summary function on the data. These functions are useful for exploring any dataset because they give you a quick overview of the data. The <strong>str()</strong> function displays how many variables and observations the dataset contains [1], Along with all the column names, the datatypes, and 10 values in each column. The <strong>summary()</strong> function displays the minimum value, the 1<sup>st</sup> quartile, the median, the mean, the 3<sup>rd</sup> quartile, and the maximum value [3]. Both of these functions are simple ways to examine any dataset and give an idea of what the data is like.</p>
+<img src="./images/5.png">
 <p><strong>Dollar Notation</strong></p>
 <p>The dollar notation uses the &ldquo;$&rdquo; sign to quickly select columns of data frame. The &ldquo;$&rdquo; is used by typing the name of the dataset, a dollar sign, and then the desired column [1]. For example, the code below selects the horsepower column of our previous dataset.</p>
+<img src="./images/6.png">
 <p>Once a column is selected it can also be used for some basic calculations.</p>
+<img src="./images/7.png">
 <p>This notation can be used for more than taking quick looks at data and calculations. The dollar notation can add new variables to a dataset when combined with the assignment operator. The code below shows an example of creating a new variable using the variables of the dataset, in this case we can create a variable called, wt_hpRatio by dividing weight by horsepower.</p>
+<img src="./images/8.png">
 <p>Another area where the dollar notation can be used is fixing datatypes. From the <strong>str()</strong> function call in the previous example we can see that all our variables are stored as numbers. However, the automatic transmission variable only has two possible values, &ldquo;0&rdquo; for automatic and &ldquo;1&rdquo; for manual, which means that it is actually a categorical variable. It is important to correct data types when cleaning data to be sure that R knows the intended datatype when doing calculations because it could cause calculation errors.</p>
 <p>The datatype for categorical values is &ldquo;factor&rdquo; in R. This issue can be resolved by using the <strong>as.factor()</strong> function and the dollar notation [3]. The code below uses the dollar notation to select the automatic transmission variable and replace it with the automatic transmission variable converted into a factor.</p>
+<img src="./images/9.png">
 <p><strong>NA Values </strong></p>
 <p>When analyzing datasets there is often missing data. When data is missing it is displayed as an &ldquo;NA,&rdquo; which means, not available [1]. NA values could make rows of data unusable which causes data in visualizations or models to be less accurate. Luckily, R has several ways of dealing with NA values. To show these methods, the dollar notation is used to add a new column, &ldquo;natest,&rdquo; that contains an NA value. This code will add an NA value to the first row, and numbers 1 through 31 to the remaining rows.</p>
 <p>The first option is to use the <strong>complete.cases()</strong> function [3]. This function creates a logical vector that assigns a true value if the row is a complete case and a false value if the row contains an NA. We can call the <strong>complete.cases()</strong> function on our data and assign it to a new variable, dataNoNA. Calling a summary of the newly created variable displays the number of complete cases as trues and the incomplete cases as false. This method is useful in getting an idea of how many NA values a dataset may contain.</p>
