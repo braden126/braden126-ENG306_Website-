@@ -119,38 +119,68 @@
 <img src="./images/27.png">
 <p><strong>Putting Dplyr All Together</strong></p>
 <p>The biggest strength of Dplyr is that all the previously described functions can be combined into one block of easy to read and easy to write code. The code below uses the <strong>select()</strong> function to use only a few variables for this block of code. The data is then piped into a <strong>filter()</strong> that selects only rows with a miles per gallon above 10 and more than 1 carburetor. The data is piped again into a <strong>mutate()</strong> which creates a new variable, miles per gallon to horsepower ratio. The data is then piped into a <strong>group_by()</strong> function for number of cylinders to prepare for a <strong>summarize()</strong> function. The data is piped into a <strong>summarize(),</strong> which calculates the mean, minimum, maximum, difference, and the number of observations for each value of cylinders in the dataset. The data is finally piped into an <strong>arrange()</strong> function where it is sorted by the newly created average miles per gallon and horsepower ratio.</p>
-<p>This block of code is an example of how Dplyr can be used to create easy to read code and produce a dataset that explains specific parts of the data. In this case, the data displays the relationship between the number of cylinders and the miles per hour and horsepower ratio.</p>
 <img src="./images/28.png">
 <p>This block of code is an example of how Dplyr can be used to create easy to read code and produce a dataset that explains specific parts of the data. In this case, the data displays the relationship between the number of cylinders and the miles per hour and horsepower ratio.</p>
 <p><strong>The Ggplot2 Package</strong></p>
 <p>Visualizing data is one of the quickest and easiest ways to clearly explain datasets with many rows of data. Ggplot2 is a package made specifically to create visualizations from datasets. All visualizations made with Ggplot2 start by calling the <strong>ggplot()</strong> function and assigning variables to the x-axis and the y-axis along with a &ldquo;geom layer&rdquo; [11]. Geom layers are used to specify the type of graph created. For example, to create a bar graph you would add <strong>geom_bar()</strong> to your <strong>ggplot()</strong> function and to create a point graph, you would add <strong>geom_point()</strong> to your <strong>ggplot()</strong> function.</p>
 <p>A visualization will display over the files panel on the bottom right of RStudio. If more than one visualization is created, the blue arrows can be pressed to view any other graphs. To return to the file panel, click the <strong>Files</strong> tab and to switch back to showing visualizations, click the <strong>Plots</strong> tab.</p>
+<img src="./images/29.png">
 <p><strong>The Ggplot() Function and Aes() Function </strong></p>
 <p>The <strong>ggplot()</strong> is the first step in creating a visualization. The initial value the function expects is the dataset the visualization will be created from [11]. To set the appearance of the visualization, the <strong>ggplot()</strong> function then expects an aesthetic function call, <strong>aes()</strong>.</p>
 <p>The <strong>aes()</strong> function is where the variables assigned to the x-axis and the y-axis are declared [12]. This function is usually written differently based on the type of geom layer used. The code below shows a basic example of a <strong>ggplot()</strong> function set to use cylinders on the x-axis and miles per gallon on the y-axis.</p>
+<img src="./images/30.png">
 <p>Once the <strong>ggplot()</strong> function and the <strong>aes()</strong> function contained inside it are finished, a geom layer is still needed to display data. Without a geom layer, R has no idea how to display the data it has gathered in a <strong>ggplot()</strong> function.</p>
 <p><strong>Geom_point() and Geom_jitter()</strong></p>
 <p>Using the previous example, we can turn that <strong>ggplot()</strong> function into a point graph by using a &ldquo;+&rdquo; operator to add <strong>geom_point()</strong> to the <strong>ggplot()</strong> function [13].</p>
+<img src="./images/31.png">
 <p>This will result in this fairly boring looking point graph.</p>
-<p>An important part of data analysis is making visualizations that are easy to read and capture the attention of someone. One easy way to achieve that is to add color, which can be done in the <strong>aes()</strong> function where a variable can be assigned to the color value. The color variable can be already represented on the x-axis or y-axis, or the color value can be assigned to a new variable to make the visualization more informative [12]. For example, in the left visualization color is assigned to the miles per gallon variable to further highlight the differences between the data groups. The right visualization has the automatic transmission variable assigned to color to add more information to the graph.</p>
+<img src="./images/32.png">
+<p>An important part of data analysis is making visualizations that are easy to read and capture the attention of someone. One easy way to achieve that is to add color, which can be done in the <strong>aes()</strong> function where a variable can be assigned to the color value. The color variable can be already represented on the x-axis or y-axis, or the color value can be assigned to a new variable to make the visualization more informative [12]. For example, in the first visualization color is assigned to the miles per gallon variable to further highlight the differences between the data groups. The second visualization has the automatic transmission variable assigned to color to add more information to the graph.</p>
+<img src="./images/33.png">
+<img src="./images/34.png">
+<img src="./images/35.png">
 <p>&nbsp;</p>
 <p>The <strong>aes()</strong> function can also have a value set for <strong>Size</strong>. The variable set to <strong>Size</strong> will make the points bigger based on how large the value of the variable is. In the below code, the variable for <strong>Size </strong>is horsepower, and points with a higher horsepower value will be larger than points with a small horsepower variable.</p>
+<img src="./images/36.png">
+<img src="./images/37.png">
 <p>&nbsp;</p>
 <p>When many points are in similar locations, they can overlap which can make it hard to read data. One way of fixing this is <strong>geom_jitter()</strong>. It works exactly like <strong>geom_point()</strong> but adds slight movement to the datapoints to make them stand out [14].</p>
+<img src="./images/38.png">
+<img src="./images/39.png">
 <p>The amount of space between the points can be edited by setting the <strong>width</strong> variable inside of the <strong>geom_jitter()</strong> functions. In the visualizations below, the first visualization contains a width value of 0.5 which keeps the points close together still. The second visualization contains a width value of 1.5 which makes the points more spread out.</p>
+<img src="./images/40.png">
+<img src="./images/41.png">
+<img src="./images/42.png">
+<img src="./images/43.png">
 <p><strong>Geom_col() and Geom_bar()</strong></p>
 <p>The same type of visualization can be made with <strong>geom_col()</strong> but instead of points it will use bars [15]. <strong>Geom_col()</strong> will work best with datasets that have a few summary values rather than showing hundreds of rows. For this example, we will use the &ldquo;allfunctions&rdquo; dataset created at the end of the dplyr tutorial. <strong>Geom_col() </strong>is added to a <strong>ggplot()</strong> function like a <strong>geom_point()</strong> or <strong>geom_jitter()</strong> using the &ldquo;+&rdquo; operator.</p>
 <p>This first example will plot cylinders on the x-axis and the variable created with the <strong>summarize()</strong> function, the average miles per gallon to horsepower ratio. For <strong>geom_col()</strong> and <strong>geom_bar()</strong>, <strong>fill </strong>is used in the <strong>aes()</strong> function instead of <strong>col</strong> because you are setting the color of the bar. If <strong>col</strong> is used with a <strong>geom_col()</strong> or <strong>geom_bar()</strong>, it will appear as a barely visible color outline of the bar. In this example the number of observations is assigned to the fill value.</p>
+<img src="./images/44.png">
+<img src="./images/45.png">
 <p><strong>Geom_col() </strong>and<strong> geom_bar()</strong> can also be displayed horizontally by using the <strong>coord_flip() </strong>function by adding it to the <strong>ggplot()</strong> function using the &ldquo;+&rdquo; operator after <strong>geom_col()</strong> is added. Horizontal displays can be useful if the x-axis has labels with many characters or with a dataset that requires the y-axis to have a long range of values to properly display. The code below demonstrates the same graph created above but appearing horizontally with the <strong>coord_flip() </strong>function applied.</p>
+<img src="./images/46.png">
+<img src="./images/47.png">
 <p><strong>Geom_bar() </strong>works similarly to <strong>geom_col()</strong> but only with a variable assigned to the x-axis and not the y-axis [15]. This is because <strong>geom_bar</strong> takes the variable assigned to the x-axis and counts the number of observations it has for each value. Using the &ldquo;data&rdquo; dataset, the code below shows the number of rows that have each possible value of the carburetor column and separates them using a fill value of automatic transmission. For example, the visualization below shows that there are 4 rows with 1 carburetor and manual transmission and there are 3 rows with 1 carburetor and automatic transmission.</p>
+<img src="./images/48.png">
+<img src="./images/49.png">
 <p>The default setting of <strong>geom_bar()</strong> places the bars on top of each other when separated using <strong>fill</strong> but this is not always the most readable way to present data. To place the bars side by side, change the <strong>position </strong>value inside the <strong>geom_bar()</strong> function to <strong>&ldquo;dodge</strong>&rdquo;. Using this setting makes it easier to read the data.</p>
+<img src="./images/50.png">
+<img src="./images/51.png">
 <p><strong>Geom_histogram()</strong></p>
 <p>The <strong>Geom_histogram() </strong>function also works similar to <strong>geom_bar() </strong>but it places values in bins and displays the number of rows that are contained in each bin [16]. The code below shows horsepower assigned the x-axes and automatic transmission assigned to the <strong>fill</strong> value.</p>
+<img src="./images/52.png">
+<img src="./images/53.png">
 <p>At the moment there is too much empty space between the bars because <strong>geom_histogram()</strong> will set the number of bins to 30 unless specified. In this case, that is creating too many groups for the dataset because there are many empty groups with no data that fit into them, which makes empty spaces. To fix this, we can set the <strong>binwidth</strong> value to 50 to make groups of 50.</p>
+<img src="./images/54.png">
+<img src="./images/55.png">
 <p>This visualization removes most of the empty space and makes it more clear what bin each bar represents but the bars are very close together. The space between bars can be fixed by changing the value of <strong>position</strong> in the <strong>geom_histogram()</strong> to <strong>position_dodge()</strong>. This function works like setting the value of <strong>position</strong> to &ldquo;dodge&rdquo; but it allows you to specify the exact position of the bars. In the code below, <strong>position_dodge() </strong>is used to make the bars overlap which provides space between the bars to improve readability.</p>
+<img src="./images/56.png">
+<img src="./images/57.png">
 <p><strong>Geom_label() and Geom_text()</strong></p>
 <p>To further increase readability, labels added by <strong>labs() </strong>and<strong> geom_text() </strong>can help. The code below uses the visualization made for the <strong>geom_col() </strong>example. First, a <strong>geom_text()</strong> function is added which labels points or bars with a variable from the dataset [17]. In the <strong>aes()</strong> function created inside of <strong>geom_text()</strong>, the avg_mpg_hp_ratio variable is used as a label and <strong>position_dodge()</strong> is used to place the label in the middle of the bar, and the <strong>vjust</strong> value is used to move the label above the bar.</p>
 <p>Next, a <strong>labs()</strong> function is called, and the x-axis, y-axis, and title are given values in quotes that are shown on the visualization [18]. Titles and labels can be essential in making sure the information displayed on the visualization is understood. They can be used to remove any abbreviations or symbols in the variable names that someone not familiar with R might not understand.</p>
+<img src="./images/58.png">
+<img src="./images/59.png">
 <p><strong>Further Learning</strong></p>
 <p>The best way to learn more about R is to start exploring and working with datasets, and <a href="https://www.kaggle.com/">https://www.kaggle.com/</a> is a great place to start. It is a free website that hosts data analysis competitions and has hundreds of datasets available to download. To learn more about R, free online R textbooks are also available at <a href="https://bookdown.org/">https://bookdown.org/</a> for a number of topics relating to R.</p>
 <p>This guide explained only some of the features of Dplyr and Ggplot2. More information can be found about them in their official documentation. The Dplyr documentation can be reached at <a href="https://dplyr.tidyverse.org/reference/index.html">https://dplyr.tidyverse.org/reference/index.html</a> and the Ggplot2 documentation can be reached at <a href="https://ggplot2.tidyverse.org/reference/index.html">https://ggplot2.tidyverse.org/reference/index.html</a> for more explanations and functions.</p>
