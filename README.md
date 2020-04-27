@@ -1,14 +1,11 @@
 <style>
 #nav{
-    height: 75vh;
     position: -webkit-sticky;
     position: sticky;
     top: 5%;
-    margin-left: -20px;
+    margin-left: -200px;
 }
 #nav a{
-    padding: 6px 8px 6px 10px;
-    font-size: 16px;
     display: block;
 }
 #nav a:link {
