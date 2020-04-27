@@ -1,3 +1,19 @@
+<style>
+#nav{
+	margin-left: 0px;
+	position: sticky;
+	top: 0;
+}
+#nav a:link {
+  text-decoration: none;
+}
+</style>
+<div id="nav">
+<a href="#top">Top</a> </br>
+<a href="#middle">Middle</a> </br>
+<a href="#bottom">Bottom</a>
+</div>
+
 <p><strong>Why R Should Be Used for Data Analysis</strong></p>
 <p>Data analysis is the process of cleaning, modeling, and visualizing data to find useful information. R and Python are the two main programming languages used for data analysis. Both languages are effective for data analysis and worth learning. Python is more commonly used and is easier to learn because it is used for general programming along with data analysis. This guide focuses on R because it is specifically designed to perform data analysis which means R has more tools to perform statistical functions. RStudio is also easier to use when managing code and datasets than other Python programming environments like PyCharm.</p>
 <p>The R programming language is designed for data analysis and has many benefits when used:</p>
