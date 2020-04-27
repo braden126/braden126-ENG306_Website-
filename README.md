@@ -13,9 +13,16 @@
 }
 </style>
 <div id="nav">
-<p><a href="#top">Top</a> </p>
-<p><a href="#middle">Middle</a> </p>
-<p><a href="#bottom">Bottom</a> </p>
+<p><a href="#RStudio">RStudio</a> </p>
+<p><a href="#Packages">Packages </a> </p>
+<p><a href="#ExampleData">Example Data </a> </p>
+<p><a href="#AssignmentOperator">Assignment Operator</a> </p>
+<p><a href="#ExploringData">Exploring Data</a> </p>
+<p><a href="#DollarNotation">Dollar Notation</a> </p>
+<p><a href="#NAValues">NA Values </a> </p>
+<p><a href="#Dplyr">Dplyr </a> </p>
+<p><a href="#Ggplot2">Ggplot2</a> </p>
+<p><a href="#FurtherLearning">Further Learning</a> </p>
 </div>
 
 <p><strong>Why R Should Be Used for Data Analysis</strong></p>
@@ -28,7 +35,7 @@
 <li>R uses the RStudio programming environment which supports publishing code online, downloading packages, error correction, and is highly customizable.</li>
 </ul>
 <p>This guide is intended for those interested in learning data analysis that already have an entry level knowledge of at least one programming language and statistics.</p>
-<p><strong>RStudio</strong></p>
+<p id="RStudio"><strong>RStudio</strong></p>
 <p>RStudio is a free and integrated development environment made specifically for R. RStudio has four panels: the top left panel is for scripts, the top right panel is the global environment, the bottom left panel is the R console, and the bottom right panel is the file panel of the open project.</p>
 <p>RStudio is also available online with RStudio Cloud. RStudio Cloud functions exactly like regular RStudio but can be accessed by any web browser after creating an account.</p>
 <p><strong>How to Start a New R Project in RStudio</strong></p>
@@ -44,13 +51,13 @@
 <p><strong>Loading Data into RStudio</strong></p>
 <p>To load data into RStudio, the data must first be stored in a data file. Some common file types used for storing data are excel files, comma separated value files, and Rdata files. To load one of these files into the global environment, first place a data file into the project folder. It will then appear in the <strong>Files Panel</strong>. Click on the desired data file in the files panel and select <strong>Import Dataset</strong>. This will open the interface for loading data which shows a preview of the data and the code used to load it into RStudio. Make sure the <strong>First Row as Names</strong> box is checked if the first row of the data contains the column names. If the dataset does not contain column names, uncheck the box and RStudio will assign default names to each column that can be changed later. After clicking <strong>Import</strong> the data file will be loaded into the <strong>Global Environment Panel </strong>and be ready for analysis.</p>
 <img src="./images/2.png">
-<p><strong>Packages </strong></p>
+<p id="Packages"><strong>Packages </strong></p>
 <p>Packages in R are user-made functions that can be downloaded into RStudio and add more features to the base R language [1]. The most essential R package is Tidyverse, which is a compilation of the most useful R packages. The added packages include the Dplyr and Ggplot2 packages, which will be the focus of this guide. The Dplyr package contains a variety of helpful functions for data manipulation and the Ggplot2 contains functions for creating visualizations of datasets. By installing Tidyverse, both of those packages are installed, along with a few extra packages. The following code uses the <strong>install.packages()</strong> function to install the package to an RStudio project.</p>
 <img src="./images/3.png">
 <p>Once installed, the package then needs to be loaded with the <strong>library()</strong> function before the functions of the package can be used. The code below is used to load the installed package into the RStudio project.</p>
 <img src="./images/4.png">
 <p>This is the process for installing any R package into RStudio. Just replace &ldquo;tidyverse&rdquo; in the code with the desired package name. The process of installing and loading a package into RStudio will need to be repeated for every new project.</p>
-<p><strong>Example Data Introduction</strong></p>
+<p id="ExampleData"><strong>Example Data Introduction</strong></p>
 <p>For all examples the mtcars dataset will be used. Mtcars is built into to RStudio and often used for teaching because it is a clean and easily accessible dataset that can be accessed without having to load the dataset into the global environment [2]. The dataset has some basic numerical data about cars:</p>
 <ul>
 <li><strong>mpg</strong> Miles/(US) gallon</li>
@@ -65,18 +72,18 @@
 <li><strong>gear</strong> Number of forward gears</li>
 <li><strong>carb</strong> Number of carburetors</li>
 </ul>
-<p><strong>The Assignment Operator</strong></p>
+<p id="AssignmentOperator"><strong>The Assignment Operator</strong></p>
 <p>Rather than an using an &ldquo;=&rdquo; operator to assign values to variables like other programming languages, R uses the &ldquo;-&gt;&rdquo; operator for assignment [3]. The &ldquo;-&gt;&rdquo; operator is very flexible because it can assign values in both directions.</p>
 <img src="./images/5.png">
 <p>Using the assignment operator, we can make a copy of the mtcars dataset. It is always good to make a copy of a dataset before running any data manipulation code because if the code does not do its intended function and the dataset is drastically changed, the original is available to undo any mistakes.</p>
 <img src="./images/6.png">
-<p><strong>Exploring Data</strong></p>
+<p id="ExploringData"><strong>Exploring Data</strong></p>
 <p>Now that we have a copy of the mtcars dataset named data, we can began looking at it. The <strong>head()</strong> function can be used to view the first 6 rows in the dataset to show what the data looks like [1].</p>
 <img src="./images/7.png">
 <p>We can then call the structure and summary function on the data. These functions are useful for exploring any dataset because they give you a quick overview of the data. The <strong>str()</strong> function displays how many variables and observations the dataset contains [1], Along with all the column names, the datatypes, and 10 values in each column. The <strong>summary()</strong> function displays the minimum value, the 1<sup>st</sup> quartile, the median, the mean, the 3<sup>rd</sup> quartile, and the maximum value [3]. Both of these functions are simple ways to examine any dataset and give an idea of what the data is like.</p>
 <img src="./images/8.png">
 <img src="./images/9.png">
-<p><strong>Dollar Notation</strong></p>
+<p id="DollarNotation"><strong>Dollar Notation</strong></p>
 <p>The dollar notation uses the &ldquo;$&rdquo; sign to quickly select columns of data frame. The &ldquo;$&rdquo; is used by typing the name of the dataset, a dollar sign, and then the desired column [1]. For example, the code below selects the horsepower column of our previous dataset.</p>
 <img src="./images/10.png">
 <p>Once a column is selected it can also be used for some basic calculations.</p>
@@ -86,7 +93,7 @@
 <p>Another area where the dollar notation can be used is fixing datatypes. From the <strong>str()</strong> function call in the previous example we can see that all our variables are stored as numbers. However, the automatic transmission variable only has two possible values, &ldquo;0&rdquo; for automatic and &ldquo;1&rdquo; for manual, which means that it is actually a categorical variable. It is important to correct data types when cleaning data to be sure that R knows the intended datatype when doing calculations because it could cause calculation errors.</p>
 <p>The datatype for categorical values is &ldquo;factor&rdquo; in R. This issue can be resolved by using the <strong>as.factor()</strong> function and the dollar notation [3]. The code below uses the dollar notation to select the automatic transmission variable and replace it with the automatic transmission variable converted into a factor.</p>
 <img src="./images/13.png">
-<p><strong>NA Values </strong></p>
+<p id="NAValues"><strong>NA Values </strong></p>
 <p>When analyzing datasets there is often missing data. When data is missing it is displayed as an &ldquo;NA,&rdquo; which means, not available [1]. NA values could make rows of data unusable which causes data in visualizations or models to be less accurate. Luckily, R has several ways of dealing with NA values. To show these methods, the dollar notation is used to add a new column, &ldquo;natest,&rdquo; that contains an NA value. This code will add an NA value to the first row, and numbers 1 through 31 to the remaining rows.</p>
 <img src="./images/14.png">
 <p>The first option is to use the <strong>complete.cases()</strong> function [3]. This function creates a logical vector that assigns a true value if the row is a complete case and a false value if the row contains an NA. We can call the <strong>complete.cases()</strong> function on our data and assign it to a new variable, dataNoNA. Calling a summary of the newly created variable displays the number of complete cases as trues and the incomplete cases as false. This method is useful in getting an idea of how many NA values a dataset may contain.</p>
@@ -98,7 +105,7 @@
 <p>By adding an &ldquo;!&rdquo; before <strong>complete.cases()</strong> the filter will do the opposite, it will create a dataset with only the rows that have NA values. This can be useful because it separates all the clean data from the data with NA values and makes it easier to evaluate the NA values of the incomplete cases without removing all the data. In many situations incomplete cases can still be valuable if only a few columns contain NA values. In this case, <strong>!complete.cases()</strong> returns the 1 observation of the 32 total observations that contains an NA value.</p>
 <img src="./images/18.png">
 <p>Both the <strong>na.omit()</strong> and the <strong>complete.cases()</strong> functions are very effective in finding and removing NA values. However, <strong>complete.cases()</strong> is easier to implement into Dplyr functions and <strong>na.omit()</strong> is easier to use outside of Dplyr functions.</p>
-<p><strong>The Dplyr Package</strong></p>
+<p id="Dplyr"><strong>The Dplyr Package</strong></p>
 <p>This package creates a structure of code for data cleaning and manipulation that is easy to read and write [4]. It does this by using chains of Dplyr functions or &ldquo;verbs&rdquo; where data is piped into each function after being executed by the function before it. The main functions are as follows:</p>
 <ul>
 <li><strong>Select</strong> is used to choose or remove specific columns from datasets</li>
@@ -138,7 +145,7 @@
 <p>The biggest strength of Dplyr is that all the previously described functions can be combined into one block of easy to read and easy to write code. The code below uses the <strong>select()</strong> function to use only a few variables for this block of code. The data is then piped into a <strong>filter()</strong> that selects only rows with a miles per gallon above 10 and more than 1 carburetor. The data is piped again into a <strong>mutate()</strong> which creates a new variable, miles per gallon to horsepower ratio. The data is then piped into a <strong>group_by()</strong> function for number of cylinders to prepare for a <strong>summarize()</strong> function. The data is piped into a <strong>summarize(),</strong> which calculates the mean, minimum, maximum, difference, and the number of observations for each value of cylinders in the dataset. The data is finally piped into an <strong>arrange()</strong> function where it is sorted by the newly created average miles per gallon and horsepower ratio.</p>
 <img src="./images/28.png">
 <p>This block of code is an example of how Dplyr can be used to create easy to read code and produce a dataset that explains specific parts of the data. In this case, the data displays the relationship between the number of cylinders and the miles per hour and horsepower ratio.</p>
-<p><strong>The Ggplot2 Package</strong></p>
+<p id="Ggplot2"><strong>The Ggplot2 Package</strong></p>
 <p>Visualizing data is one of the quickest and easiest ways to clearly explain datasets with many rows of data. Ggplot2 is a package made specifically to create visualizations from datasets. All visualizations made with Ggplot2 start by calling the <strong>ggplot()</strong> function and assigning variables to the x-axis and the y-axis along with a &ldquo;geom layer&rdquo; [11]. Geom layers are used to specify the type of graph created. For example, to create a bar graph you would add <strong>geom_bar()</strong> to your <strong>ggplot()</strong> function and to create a point graph, you would add <strong>geom_point()</strong> to your <strong>ggplot()</strong> function.</p>
 <p>A visualization will display over the files panel on the bottom right of RStudio. If more than one visualization is created, the blue arrows can be pressed to view any other graphs. To return to the file panel, click the <strong>Files</strong> tab and to switch back to showing visualizations, click the <strong>Plots</strong> tab.</p>
 <img src="./images/29.png">
@@ -196,7 +203,7 @@
 <p>Next, a <strong>labs()</strong> function is called, and the x-axis, y-axis, and title are given values in quotes that are shown on the visualization [18]. Titles and labels can be essential in making sure the information displayed on the visualization is understood. They can be used to remove any abbreviations or symbols in the variable names that someone not familiar with R might not understand.</p>
 <img src="./images/58.png">
 <img src="./images/59.png">
-<p><strong>Further Learning</strong></p>
+<p id="FurtherLearning"><strong>Further Learning</strong></p>
 <p>The best way to learn more about R is to start exploring and working with datasets, and <a href="https://www.kaggle.com/">https://www.kaggle.com/</a> is a great place to start. It is a free website that hosts data analysis competitions and has hundreds of datasets available to download. To learn more about R, free online R textbooks are also available at <a href="https://bookdown.org/">https://bookdown.org/</a> for a number of topics relating to R.</p>
 <p>This guide explained only some of the features of Dplyr and Ggplot2. More information can be found about them in their official documentation. The Dplyr documentation can be reached at <a href="https://dplyr.tidyverse.org/reference/index.html">https://dplyr.tidyverse.org/reference/index.html</a> and the Ggplot2 documentation can be reached at <a href="https://ggplot2.tidyverse.org/reference/index.html">https://ggplot2.tidyverse.org/reference/index.html</a> for more explanations and functions.</p>
 <p>&nbsp;</p>
