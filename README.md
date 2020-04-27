@@ -6,7 +6,7 @@
     margin-left: -200px;
 }
 #nav a{
-    display: block;
+    display: inline-block;
 }
 #nav a:link {
   text-decoration: none;
