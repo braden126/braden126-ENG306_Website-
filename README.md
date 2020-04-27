@@ -4,7 +4,7 @@
     position: -webkit-sticky;
     position: sticky;
     top: 5%;
-    margin-left: 10px;
+    margin-left: -20px;
 }
 #nav a{
     padding: 6px 8px 6px 10px;
