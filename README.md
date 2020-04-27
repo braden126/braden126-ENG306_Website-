@@ -1,17 +1,24 @@
 <style>
 #nav{
-	margin-left: 0px;
-	position: sticky;
-	top: 0;
+    height: 75vh;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5%;
+    margin-left: 10px;
+}
+#nav a{
+    padding: 6px 8px 6px 10px;
+    font-size: 16px;
+    display: block;
 }
 #nav a:link {
   text-decoration: none;
 }
 </style>
 <div id="nav">
-<a href="#top">Top</a> </br>
-<a href="#middle">Middle</a> </br>
-<a href="#bottom">Bottom</a>
+<p><a href="#top">Top</a> </p>
+<p><a href="#middle">Middle</a> </p>
+<p><a href="#bottom">Bottom</a> </p>
 </div>
 
 <p><strong>Why R Should Be Used for Data Analysis</strong></p>
