@@ -4,6 +4,7 @@
     position: sticky;
     top: 5%;
     margin-left: -200px;
+    float:left;
 }
 #nav a{
     display: inline-block;
