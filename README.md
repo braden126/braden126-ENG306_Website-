@@ -17,7 +17,7 @@
     text-decoration: none;
 }
 #nav p{ 
-    margin:3;
+    margin: 3px 0;
 }	
 </style>
 <div id="nav">
