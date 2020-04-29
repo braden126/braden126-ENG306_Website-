@@ -3,19 +3,22 @@
     position: -webkit-sticky;
     position: sticky;
     top: 5%;
-    margin-left: -200px;
+    margin-left: -350px;
     float:left;
     border-style: solid;
     border-width: 1px;
     padding: 5px 5px 5px 5px;
-	border-radius: 5px;
+    border-radius: 5px;
 }
 #nav a{
     display: inline-block;
 }
-#nav a:link {
+#nav a:link{
   text-decoration: none;
 }
+#nav p{ 
+	margin:3
+}	
 </style>
 <div id="nav">
 <p><a href="#RStudio">RStudio</a> </p>
