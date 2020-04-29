@@ -5,6 +5,8 @@
     top: 5%;
     margin-left: -200px;
     float:left;
+    border-style: solid;
+    border-width: 1px;
 }
 #nav a{
     display: inline-block;
@@ -36,7 +38,7 @@
 <li>R uses the RStudio programming environment which supports publishing code online, downloading packages, error correction, and is highly customizable.</li>
 </ul>
 <p>This guide is intended for those interested in learning data analysis that already have an entry level knowledge of at least one programming language and statistics.</p>
-<p id="RStudio"><strong>RStudio</strong></p>
+<h1 id="RStudio"><strong>RStudio</strong></h1>
 <p>RStudio is a free and integrated development environment made specifically for R. RStudio has four panels: the top left panel is for scripts, the top right panel is the global environment, the bottom left panel is the R console, and the bottom right panel is the file panel of the open project.</p>
 <p>RStudio is also available online with RStudio Cloud. RStudio Cloud functions exactly like regular RStudio but can be accessed by any web browser after creating an account.</p>
 <p><strong>How to Start a New R Project in RStudio</strong></p>
@@ -73,6 +75,8 @@
 <li><strong>gear</strong> Number of forward gears</li>
 <li><strong>carb</strong> Number of carburetors</li>
 </ul>
+<h1><strong>Working With Base R</strong></h1>
+<p>Base R is R without any extra packages downloaded. All the functions of base R are usable as soon as a new RStudio project is created. Although R packages provide many extra functions, many useful functions are in the base R language that can be useful for data manipulation and exploration.</p>
 <p id="AssignmentOperator"><strong>The Assignment Operator</strong></p>
 <p>Rather than an using an &ldquo;=&rdquo; operator to assign values to variables like other programming languages, R uses the &ldquo;-&gt;&rdquo; operator for assignment [3]. The &ldquo;-&gt;&rdquo; operator is very flexible because it can assign values in both directions.</p>
 <img src="./images/5.png">
@@ -106,7 +110,7 @@
 <p>By adding an &ldquo;!&rdquo; before <strong>complete.cases()</strong> the filter will do the opposite, it will create a dataset with only the rows that have NA values. This can be useful because it separates all the clean data from the data with NA values and makes it easier to evaluate the NA values of the incomplete cases without removing all the data. In many situations incomplete cases can still be valuable if only a few columns contain NA values. In this case, <strong>!complete.cases()</strong> returns the 1 observation of the 32 total observations that contains an NA value.</p>
 <img src="./images/18.png">
 <p>Both the <strong>na.omit()</strong> and the <strong>complete.cases()</strong> functions are very effective in finding and removing NA values. However, <strong>complete.cases()</strong> is easier to implement into Dplyr functions and <strong>na.omit()</strong> is easier to use outside of Dplyr functions.</p>
-<p id="Dplyr"><strong>The Dplyr Package</strong></p>
+<h1 id="Dplyr"><strong>The Dplyr Package</strong></h1>
 <p>This package creates a structure of code for data cleaning and manipulation that is easy to read and write [4]. It does this by using chains of Dplyr functions or &ldquo;verbs&rdquo; where data is piped into each function after being executed by the function before it. The main functions are as follows:</p>
 <ul>
 <li><strong>Select</strong> is used to choose or remove specific columns from datasets</li>
@@ -146,7 +150,7 @@
 <p>The biggest strength of Dplyr is that all the previously described functions can be combined into one block of easy to read and easy to write code. The code below uses the <strong>select()</strong> function to use only a few variables for this block of code. The data is then piped into a <strong>filter()</strong> that selects only rows with a miles per gallon above 10 and more than 1 carburetor. The data is piped again into a <strong>mutate()</strong> which creates a new variable, miles per gallon to horsepower ratio. The data is then piped into a <strong>group_by()</strong> function for number of cylinders to prepare for a <strong>summarize()</strong> function. The data is piped into a <strong>summarize(),</strong> which calculates the mean, minimum, maximum, difference, and the number of observations for each value of cylinders in the dataset. The data is finally piped into an <strong>arrange()</strong> function where it is sorted by the newly created average miles per gallon and horsepower ratio.</p>
 <img src="./images/28.png">
 <p>This block of code is an example of how Dplyr can be used to create easy to read code and produce a dataset that explains specific parts of the data. In this case, the data displays the relationship between the number of cylinders and the miles per hour and horsepower ratio.</p>
-<p id="Ggplot2"><strong>The Ggplot2 Package</strong></p>
+<h1 id="Ggplot2"><strong>The Ggplot2 Package</strong></h1>
 <p>Visualizing data is one of the quickest and easiest ways to clearly explain datasets with many rows of data. Ggplot2 is a package made specifically to create visualizations from datasets. All visualizations made with Ggplot2 start by calling the <strong>ggplot()</strong> function and assigning variables to the x-axis and the y-axis along with a &ldquo;geom layer&rdquo; [11]. Geom layers are used to specify the type of graph created. For example, to create a bar graph you would add <strong>geom_bar()</strong> to your <strong>ggplot()</strong> function and to create a point graph, you would add <strong>geom_point()</strong> to your <strong>ggplot()</strong> function.</p>
 <p>A visualization will display over the files panel on the bottom right of RStudio. If more than one visualization is created, the blue arrows can be pressed to view any other graphs. To return to the file panel, click the <strong>Files</strong> tab and to switch back to showing visualizations, click the <strong>Plots</strong> tab.</p>
 <img src="./images/29.png">
