@@ -7,6 +7,8 @@
     float:left;
     border-style: solid;
     border-width: 1px;
+    padding: 5px 5px 5px 5px;
+	border-radius: 5px;
 }
 #nav a{
     display: inline-block;
@@ -17,14 +19,28 @@
 </style>
 <div id="nav">
 <p><a href="#RStudio">RStudio</a> </p>
-<p><a href="#Packages">Packages </a> </p>
-<p><a href="#ExampleData">Example Data </a> </p>
-<p><a href="#AssignmentOperator">Assignment Operator</a> </p>
-<p><a href="#ExploringData">Exploring Data</a> </p>
-<p><a href="#DollarNotation">Dollar Notation</a> </p>
-<p><a href="#NAValues">NA Values </a> </p>
+<p style="padding-left: 25px"><a href="#NewRProject">New R Project in RStudio </a> </p>
+<p style="padding-left: 25px"><a href="#LoadingData">Loading Data into RStudio </a> </p>
+<p style="padding-left: 25px"><a href="#Packages">Packages </a> </p>
+<p style="padding-left: 25px"><a href="#ExampleData">Example Data </a> </p>
+<p><a href="#WorkingWith">Working With Base R</a> </p>
+<p style="padding-left: 25px"><a href="#AssignmentOperator">Assignment Operator</a> </p>
+<p style="padding-left: 25px"><a href="#ExploringData">Exploring Data</a> </p>
+<p style="padding-left: 25px"><a href="#DollarNotation">Dollar Notation</a> </p>
+<p style="padding-left: 25px"><a href="#NAValues">NA Values </a> </p>
 <p><a href="#Dplyr">Dplyr </a> </p>
+<p style="padding-left: 25px"><a href="#Select">Select </a> </p>
+<p style="padding-left: 25px"><a href="#Filter">Filter </a> </p>
+<p style="padding-left: 25px"><a href="#Mutate">Mutate </a> </p>
+<p style="padding-left: 25px"><a href="#Summarize">Summarize </a> </p>
+<p style="padding-left: 25px"><a href="#Group_by">Group_by </a> </p>
+<p style="padding-left: 25px"><a href="#Arrange">Arrange </a> </p>
 <p><a href="#Ggplot2">Ggplot2</a> </p>
+<p style="padding-left: 25px"><a href="#GgplotandAes">Ggplot and Aes </a> </p>
+<p style="padding-left: 25px"><a href="#Geom_point">Geom_point and Geom_jitter</a> </p>
+<p style="padding-left: 25px"><a href="#Geom_col">Geom_col and Geom_bar </a> </p>
+<p style="padding-left: 25px"><a href="#Geom_histogram">Geom_histogram </a> </p>
+<p style="padding-left: 25px"><a href="#Geom_label">Geom_label and Geom_text </a> </p>
 <p><a href="#FurtherLearning">Further Learning</a> </p>
 </div>
 
@@ -41,7 +57,7 @@
 <h1 id="RStudio"><strong>RStudio</strong></h1>
 <p>RStudio is a free and integrated development environment made specifically for R. RStudio has four panels: the top left panel is for scripts, the top right panel is the global environment, the bottom left panel is the R console, and the bottom right panel is the file panel of the open project.</p>
 <p>RStudio is also available online with RStudio Cloud. RStudio Cloud functions exactly like regular RStudio but can be accessed by any web browser after creating an account.</p>
-<p><strong>How to Start a New R Project in RStudio</strong></p>
+<p id="NewRProject"><strong>How to Start a New R Project in RStudio</strong></p>
 <p>After opening RStudio, a new project can be created by selecting <strong>File</strong>, and then <strong>New Project</strong>. Then select <strong>New Directory</strong>, and then <strong>New Project</strong>. Next, name the project and select <strong>Create Project</strong>. When a new RStudio project is created, RStudio will create a new folder for the project where all the newly created files are stored. Data files can be added to a project by placing them in the project folder.</p>
 <p>Here is the view of a newly created RStudio project.</p>
 <img src="./images/1.png">
@@ -51,7 +67,7 @@
 <li><strong>The Global Environment Panel</strong> displays all datasets and variables that have been loaded into the project. All objects in the global environment can be accessed by the script panel with code. Datasets in the global environment will display their data in table form when clicked on.</li>
 <li><strong>The Files Panel</strong> displays all the files inside the project folder.</li>
 </ul>
-<p><strong>Loading Data into RStudio</strong></p>
+<p id="LoadingData"><strong>Loading Data Into RStudio</strong></p>
 <p>To load data into RStudio, the data must first be stored in a data file. Some common file types used for storing data are excel files, comma separated value files, and Rdata files. To load one of these files into the global environment, first place a data file into the project folder. It will then appear in the <strong>Files Panel</strong>. Click on the desired data file in the files panel and select <strong>Import Dataset</strong>. This will open the interface for loading data which shows a preview of the data and the code used to load it into RStudio. Make sure the <strong>First Row as Names</strong> box is checked if the first row of the data contains the column names. If the dataset does not contain column names, uncheck the box and RStudio will assign default names to each column that can be changed later. After clicking <strong>Import</strong> the data file will be loaded into the <strong>Global Environment Panel </strong>and be ready for analysis.</p>
 <img src="./images/2.png">
 <p id="Packages"><strong>Packages </strong></p>
@@ -75,7 +91,7 @@
 <li><strong>gear</strong> Number of forward gears</li>
 <li><strong>carb</strong> Number of carburetors</li>
 </ul>
-<h1><strong>Working With Base R</strong></h1>
+<h1 id="WorkingWith"><strong>Working With Base R</strong></h1>
 <p>Base R is R without any extra packages downloaded. All the functions of base R are usable as soon as a new RStudio project is created. Although R packages provide many extra functions, many useful functions are in the base R language that can be useful for data manipulation and exploration.</p>
 <p id="AssignmentOperator"><strong>The Assignment Operator</strong></p>
 <p>Rather than an using an &ldquo;=&rdquo; operator to assign values to variables like other programming languages, R uses the &ldquo;-&gt;&rdquo; operator for assignment [3]. The &ldquo;-&gt;&rdquo; operator is very flexible because it can assign values in both directions.</p>
@@ -122,28 +138,28 @@
 </ul>
 <p>Blocks of Dplyr code can use any number of the main functions to perform data manipulation. When using Dplyr functions, data is moved into each function using a pipe operator, <strong>%&gt;% </strong>[4]. The basic syntax is to first type the name of the new dataset that will contain the result of the Dplyr code, in this case &ldquo;datadplyr&rdquo;. Then use the assignment operator to assign the dataset that will be manipulated to the new dataset name, which is &ldquo;data.&rdquo; Now the pipe operator be placed after the dataset that will be manipulated. On the next line, the first Dplyr function can be placed, in this example the <strong>select()</strong> function is used. After the <strong>select() </strong>function, another pipe operator will be placed to move the data into the <strong>mutate()</strong> function on the next line. After the <strong>mutate()</strong> function, another pipe operator is placed to move the data into the <strong>summarize() </strong>function. After the <strong>summarize() </strong>function, no more Dplyr functions are used for this code block so another pipe operator is not needed and the result of the code will be assigned to the new dataset, &ldquo;datadplyr.&rdquo;</p>
 <img src="./images/19.png">
-<p><strong>Dplyr Select()</strong></p>
+<p id="Select"><strong>Dplyr Select()</strong></p>
 <p>The <strong>select()</strong> function is used to select only desired columns [5]. The <strong>select()</strong> function is useful for simplifying datasets to show only the columns that are significant for the analysis being done. Using the <strong>colnames()</strong> function, the columns of the original dataset are shown. The <strong>select()</strong> function can then be used to keep only the weight, cylinder, and miles per gallon columns. This function keeps all the rows of the dataset but only selects the data in the desired columns.</p>
 <img src="./images/20.png">
 <p>If you only want to remove a few columns from the dataset, select can also be used to deselect from a dataset. Using the &ldquo;-&ldquo; before a column will have the same output as typing all the columns you want to keep individually but in less and more readable code. The code below selects all the columns except weight using the &ldquo;-&ldquo; symbol.</p>
 <img src="./images/21.png">
-<p><strong>Dplyr Filter()</strong></p>
+<p id="Filter"><strong>Dplyr Filter()</strong></p>
 <p>The <strong>filter()</strong> function is used to return only rows that satisfy specific conditions [6]. It uses logical operators to create conditions that can be used to evaluate values contained in the dataset. Here is an example of a <strong>filter()</strong> function that will assign the returned rows into a new dataset that will only contain rows that have a mpg value of less than 20.</p>
 <img src="./images/22.png">
 <p>The <strong>or</strong> operator, &ldquo;|&rdquo; and <strong>and</strong> operator, &ldquo;&amp;&rdquo; operators can be used to add more conditional statements to the <strong>filter()</strong> function call.</p>
 <img src="./images/23.png">
 <p>This filter uses multiple conditional statements to only return rows that have 4 or 6 cylinders, and a miles per gallon value of less than 23. There is no limit to how many conditional statements can be placed, so the filtering can be very complex or very simple depending on the need.</p>
-<p><strong>Dplyr Mutate()</strong></p>
+<p id="Mutate"><strong>Dplyr Mutate()</strong></p>
 <p>The <strong>mutate()</strong> function is used to create new variables in datasets [7]. Creating new variables is something that has already been covered using the dollar sign notation, but it can also be integrated into Dplyr. While the dollar notation is simpler, mutate can be used in conjunction with other Dplyr functions to make code more readable and remove chances for error because it will be completed with any other Dplyr functions on a dataset. The code below remakes the weight to horsepower variable created earlier but in the syntax for mutate. The name of the new variable is written and is set equal to the equation used to create the new variable.</p>
 <img src="./images/24.png">
-<p><strong>Dplyr Summarize()</strong></p>
+<p id="Summarize"><strong>Dplyr Summarize()</strong></p>
 <p>The <strong>summarize()</strong> function is used to reduce a dataset to one value that summarizes the data [8]. The syntax is very similar to the mutate function; the name of the new variable is typed and set equal to the equation used to create the variable. The code below shows a number of statistical functions like mean and median used to create new variables. The result is only one summarizing value for each variable created. Note, summarize and summarise, will work exactly the same regardless of the spelling.</p>
 <img src="./images/25.png">
-<p><strong>Dplyr Group_by()</strong></p>
+<p id="Group_by"><strong>Dplyr Group_by()</strong></p>
 <p>The <strong>group_by()</strong> function is used to group rows together according to the value. Using the group by function by itself does not change how the data looks, but it does change how it interacts with other Dplyr functions [9]. When combined with the summarize function the group by function will cause the summarize function to calculate its summarizing values for each value in the variable the dataset is grouped by.</p>
 <p>For example, if we use the summarize function created in the previous example and group by the cylinder variable, which only has the values 4, 6, and 8, the summarize function will calculate values by group for 4, 6, and 8. This creates 3 rows in the resulting dataset rather than 1 in the previous example.</p>
 <img src="./images/26.png">
-<p><strong>Dplyr Arrange()</strong></p>
+<p id="Arrange"><strong>Dplyr Arrange()</strong></p>
 <p>The <strong>arrange() </strong>function is used to sort datasets by variables in descending or ascending order and is very useful for displaying data [10]. Arrange will sort ascending unless specified, it will also place all NA values of a sorted column at the end of the dataset regardless of being sorted ascending or descending. Arrange can also be used to sort by many variables at once. The code below sorts by cylinders descending and miles per gallon ascending</p>
 <img src="./images/27.png">
 <p><strong>Putting Dplyr All Together</strong></p>
@@ -154,12 +170,12 @@
 <p>Visualizing data is one of the quickest and easiest ways to clearly explain datasets with many rows of data. Ggplot2 is a package made specifically to create visualizations from datasets. All visualizations made with Ggplot2 start by calling the <strong>ggplot()</strong> function and assigning variables to the x-axis and the y-axis along with a &ldquo;geom layer&rdquo; [11]. Geom layers are used to specify the type of graph created. For example, to create a bar graph you would add <strong>geom_bar()</strong> to your <strong>ggplot()</strong> function and to create a point graph, you would add <strong>geom_point()</strong> to your <strong>ggplot()</strong> function.</p>
 <p>A visualization will display over the files panel on the bottom right of RStudio. If more than one visualization is created, the blue arrows can be pressed to view any other graphs. To return to the file panel, click the <strong>Files</strong> tab and to switch back to showing visualizations, click the <strong>Plots</strong> tab.</p>
 <img src="./images/29.png">
-<p><strong>The Ggplot() Function and Aes() Function </strong></p>
+<p id="GgplotandAes"><strong>The Ggplot() Function and Aes() Function </strong></p>
 <p>The <strong>ggplot()</strong> is the first step in creating a visualization. The initial value the function expects is the dataset the visualization will be created from [11]. To set the appearance of the visualization, the <strong>ggplot()</strong> function then expects an aesthetic function call, <strong>aes()</strong>.</p>
 <p>The <strong>aes()</strong> function is where the variables assigned to the x-axis and the y-axis are declared [12]. This function is usually written differently based on the type of geom layer used. The code below shows a basic example of a <strong>ggplot()</strong> function set to use cylinders on the x-axis and miles per gallon on the y-axis.</p>
 <img src="./images/30.png">
 <p>Once the <strong>ggplot()</strong> function and the <strong>aes()</strong> function contained inside it are finished, a geom layer is still needed to display data. Without a geom layer, R has no idea how to display the data it has gathered in a <strong>ggplot()</strong> function.</p>
-<p><strong>Geom_point() and Geom_jitter()</strong></p>
+<p id="Geom_point"><strong>Geom_point() and Geom_jitter()</strong></p>
 <p>Using the previous example, we can turn that <strong>ggplot()</strong> function into a point graph by using a &ldquo;+&rdquo; operator to add <strong>geom_point()</strong> to the <strong>ggplot()</strong> function [13].</p>
 <img src="./images/31.png">
 <p>This will result in this fairly boring looking point graph.</p>
@@ -179,7 +195,7 @@
 <img src="./images/41.png">
 <img src="./images/42.png">
 <img src="./images/43.png">
-<p><strong>Geom_col() and Geom_bar()</strong></p>
+<p id="Geom_col"><strong>Geom_col() and Geom_bar()</strong></p>
 <p>The same type of visualization can be made with <strong>geom_col()</strong> but instead of points it will use bars [15]. <strong>Geom_col()</strong> will work best with datasets that have a few summary values rather than showing hundreds of rows. For this example, we will use the &ldquo;allfunctions&rdquo; dataset created at the end of the dplyr tutorial. <strong>Geom_col() </strong>is added to a <strong>ggplot()</strong> function like a <strong>geom_point()</strong> or <strong>geom_jitter()</strong> using the &ldquo;+&rdquo; operator.</p>
 <p>This first example will plot cylinders on the x-axis and the variable created with the <strong>summarize()</strong> function, the average miles per gallon to horsepower ratio. For <strong>geom_col()</strong> and <strong>geom_bar()</strong>, <strong>fill </strong>is used in the <strong>aes()</strong> function instead of <strong>col</strong> because you are setting the color of the bar. If <strong>col</strong> is used with a <strong>geom_col()</strong> or <strong>geom_bar()</strong>, it will appear as a barely visible color outline of the bar. In this example the number of observations is assigned to the fill value.</p>
 <img src="./images/44.png">
@@ -193,7 +209,7 @@
 <p>The default setting of <strong>geom_bar()</strong> places the bars on top of each other when separated using <strong>fill</strong> but this is not always the most readable way to present data. To place the bars side by side, change the <strong>position </strong>value inside the <strong>geom_bar()</strong> function to <strong>&ldquo;dodge</strong>&rdquo;. Using this setting makes it easier to read the data.</p>
 <img src="./images/50.png">
 <img src="./images/51.png">
-<p><strong>Geom_histogram()</strong></p>
+<p id="Geom_histogram"><strong>Geom_histogram()</strong></p>
 <p>The <strong>Geom_histogram() </strong>function also works similar to <strong>geom_bar() </strong>but it places values in bins and displays the number of rows that are contained in each bin [16]. The code below shows horsepower assigned the x-axes and automatic transmission assigned to the <strong>fill</strong> value.</p>
 <img src="./images/52.png">
 <img src="./images/53.png">
@@ -203,7 +219,7 @@
 <p>This visualization removes most of the empty space and makes it more clear what bin each bar represents but the bars are very close together. The space between bars can be fixed by changing the value of <strong>position</strong> in the <strong>geom_histogram()</strong> to <strong>position_dodge()</strong>. This function works like setting the value of <strong>position</strong> to &ldquo;dodge&rdquo; but it allows you to specify the exact position of the bars. In the code below, <strong>position_dodge() </strong>is used to make the bars overlap which provides space between the bars to improve readability.</p>
 <img src="./images/56.png">
 <img src="./images/57.png">
-<p><strong>Geom_label() and Geom_text()</strong></p>
+<p id="Geom_label"><strong>Geom_label() and Geom_text()</strong></p>
 <p>To further increase readability, labels added by <strong>labs() </strong>and<strong> geom_text() </strong>can help. The code below uses the visualization made for the <strong>geom_col() </strong>example. First, a <strong>geom_text()</strong> function is added which labels points or bars with a variable from the dataset [17]. In the <strong>aes()</strong> function created inside of <strong>geom_text()</strong>, the avg_mpg_hp_ratio variable is used as a label and <strong>position_dodge()</strong> is used to place the label in the middle of the bar, and the <strong>vjust</strong> value is used to move the label above the bar.</p>
 <p>Next, a <strong>labs()</strong> function is called, and the x-axis, y-axis, and title are given values in quotes that are shown on the visualization [18]. Titles and labels can be essential in making sure the information displayed on the visualization is understood. They can be used to remove any abbreviations or symbols in the variable names that someone not familiar with R might not understand.</p>
 <img src="./images/58.png">
