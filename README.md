@@ -3,7 +3,7 @@
     position: -webkit-sticky;
     position: sticky;
     top: 5%;
-    margin-left: -350px;
+    margin-left: -325px;
     float:left;
     border-style: solid;
     border-width: 1px;
@@ -14,10 +14,10 @@
     display: inline-block;
 }
 #nav a:link{
-  text-decoration: none;
+    text-decoration: none;
 }
 #nav p{ 
-	margin:3
+    margin:3;
 }	
 </style>
 <div id="nav">
