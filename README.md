@@ -2,7 +2,7 @@
 #nav{
     position: -webkit-sticky;
     position: sticky;
-    top: 5%;
+    top: 2%;
     margin-left: -325px;
     float:left;
     border-style: solid;
