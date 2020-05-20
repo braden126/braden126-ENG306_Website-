@@ -6,7 +6,7 @@
     position: -webkit-sticky;
     position: sticky;
     top: 2%;
-    margin-left: -175px;
+    margin-left: -150px;
     float:left;
     border-style: solid;
     border-width: 1px;
