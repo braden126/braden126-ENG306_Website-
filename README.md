@@ -1,12 +1,12 @@
 <style>
 #body{
-    margin-left: 100px;
+    margin-left: 150px;
     }
 #nav{
     position: -webkit-sticky;
     position: sticky;
     top: 2%;
-    margin-left: -325px;
+    margin-left: -225px;
     float:left;
     border-style: solid;
     border-width: 1px;
