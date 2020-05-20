@@ -1,4 +1,7 @@
 <style>
+#body{
+    margin-left: 100px;
+    }
 #nav{
     position: -webkit-sticky;
     position: sticky;
@@ -47,6 +50,7 @@
 <p><a href="#FurtherLearning">Further Learning</a> </p>
 </div>
 
+<div id="body">
 <p><strong>Why R Should Be Used for Data Analysis</strong></p>
 <p>Data analysis is the process of cleaning, modeling, and visualizing data to find useful information. R and Python are the two main programming languages used for data analysis. Both languages are effective for data analysis and worth learning. Python is more commonly used and is easier to learn because it is used for general programming along with data analysis. This guide focuses on R because it is specifically designed to perform data analysis which means R has more tools to perform statistical functions. RStudio is also easier to use when managing code and datasets than other Python programming environments like PyCharm.</p>
 <p>The R programming language is designed for data analysis and has many benefits when used:</p>
@@ -276,4 +280,5 @@
 <p style="margin-left: 20px; text-indent: -20px;">This online documentation comes from the Tidyverse reference webpage, it contains documentation for all the packages that are contained in the Tidyverse. This documentation explains how to use the Ggplot2 histogram layer. This layer can be used to place data into bins and visualize them in a graph. The documentation provides extra syntax and examples on how to create histograms using Ggplot2.</p>
 <p style="margin-left: 20px; text-indent: -20px;">[18] &ldquo;Modify axis, legend, and plot labels.&rdquo; Ggplot2 Tidyverse Reference. https://ggplot2.tidyverse.org/reference/labs.html (accessed March 30, 2020).</p>
 <p style="margin-left: 20px; text-indent: -20px;">This online documentation comes from the Tidyverse reference webpage, it contains documentation for all the packages that are contained in the Tidyverse. This documentation explains how to use the Ggplot2 histogram layer. This layer can be used to place data into bins and visualize them in a graph. The documentation provides extra syntax and examples on how to create histograms using Ggplot2.</p>
+</div>
 
